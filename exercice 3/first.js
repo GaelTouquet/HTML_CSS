@@ -13,10 +13,11 @@ function sleep(milliseconds) {
 
 function aumoins3(array, verifcallback) {
     let nTrue = 0;
-    array.forEach(element => {
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
         if (verifcallback(element)) { nTrue++; }
-        if (nTrue == 3) { return true; }
-    });
+        if (nTrue > 2) { return true; }
+    }
     return false;
 };
 
@@ -29,3 +30,13 @@ function filter(array, verifcallback) {
     });
     return selectedElements;
 };
+
+// Tests
+console.log(5>3)
+function over1(number) {
+    return number>1;
+}
+console.log(over1(5));
+let bla = [1,2,3,4,5,6,7];
+console.log('aumoins3(',bla,' ,over1) : ', aumoins3(bla, over1));
+console.log('filter(',bla,' ,over1) : ', filter(bla, over1));
