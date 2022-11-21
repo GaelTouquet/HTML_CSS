@@ -12,13 +12,11 @@ function sleep(milliseconds) {
 })();
 
 function aumoins3(array, verifcallback) {
-    let i=0;
     let nTrue=0;
-    while (i<noms.length) {
-        if (verifcallback(array[i])) {nTrue++;}
+    array.forEach(element => {
+        if (verifcallback(element)) {nTrue++;}
         if (nTrue==3) {return true;}
-        i++;
-    }
+    });
     return false;
 };
 
