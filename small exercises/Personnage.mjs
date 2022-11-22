@@ -1,11 +1,10 @@
-
-
 export class Personnage {
     constructor(nom) {
         this.nom = nom;
         this.sante = undefined;
         this.force = undefined;
     }
+    
 }
 
 export class Aventurier extends Personnage {
